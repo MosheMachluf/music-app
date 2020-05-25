@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en" data-theme='dark'>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/main.css">
+    <title>Music Love Official</title>
+    <script type="module" src="js/music_main.js"></script>
+</head>
+
+<body>
+    <header class="container-fluid main-nav">
+        <div class="container center justify-content-between">
+            <div class="logo">
+                <a href="audio.html">
+                    <div class="display-4">MUSIC<span class="bold">LOVE</span></div>
+                </a>
+            </div>
+            <nav>
+                <div class="d-md-none hamburger">☰</div>
+                <ul id="toggle">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Contact</a></li>
+                    <li>
+                        <label class="mx-2">Dark Mode</label>
+                        <label class="switch">
+                            <input type="checkbox" name="theme" checked>
+                            <span class="slider round"></span>
+                        </label>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+
+        <div class="duration d-none"></div>
+
+    </header>
+
+    <div class="strip container-fluid">
+        <div class="black_overlay"></div>
+        <div class="container center">
+            <h1 class="display-1 pb-5 text-center">Welcome To Music LOVE</h1>
+        </div>
+    </div>
+
+    <div class="container-fluid">
+        <div class="bg_dark_box center d-none">
+            <div class="dark_box center">
+                <div class="inner_dark_box center">
+
+                </div>
+            </div>
+        </div>
+        <div class="container grid_main">
+            <main>
+                <div class="search_bar">
+                    <div class="search col-9">
+                        <select class="sort form-control bg-transparent border-0" id="id_sort_select">
+                            <option value="">Sort By...</option>
+                            <option value="rank">Popular</option>
+                            <option value="title">Name</option>
+                            <option value="duration">Duration</option>
+                        </select>
+
+                        <button id="search_btn" class="bg-transparent border-0">
+                            <i class="fa fa-search" aria-hidden="true"></i>
+                        </button>
+                        <input id="id_search_input" type="search" placeholder="Search Song...">
+                        <div id="loading_search" class="mr-4"></div>
+                        <i role="presentation" class="close fa fa-times-circle" aria-hidden="true"></i>
+                    </div>
+
+                    <button id="id_order" class="btn_c col">
+                        Order By <span>--</span>
+                    </button>
+                </div>
+
+                <div id="bar_title">
+                </div>
+                <!-- View Results -->
+                <div id="view_songs">
+                    <!-- <div class="grid_songs shadow active">
+                        <div class="d-flex center">
+                            <figure class="my-0 mr-5">
+                                <img src="https://cdns-images.dzcdn.net/images/artist/d546270c28fc3ba5948cf33bfa3cdc5c/56x56-000000-80-0-0.jpg"
+                                    class="rounded-circle" width="50">
+                            </figure><button class="play center"><i class="fa fa-play"
+                                    aria-hidden="true"></i></button><button class="stop center"><i class="fa fa-stop"
+                                    aria-hidden="true"></i></button>
+                        </div>
+                        <div class="song_name">
+                            <h2 class="display-4 sm_title">Omer Aasal</h2>
+                            <div class="secTxt">Joseph Attieh</div>
+                        </div>
+                        <div class="d-none d-md-block">Omer Aasal</div>
+                        <div>03:41</div>
+                        <div class="d-none d-md-block">334,618</div>
+                    </div>
+                    <div class="grid_songs shadow">
+                        <div class="d-flex center">
+                            <figure class="my-0 mr-5">
+                                <img src="https://cdns-images.dzcdn.net/images/artist/d546270c28fc3ba5948cf33bfa3cdc5c/56x56-000000-80-0-0.jpg"
+                                    class="rounded-circle" width="50">
+                            </figure><button class="play center"><i class="fa fa-play"
+                                    aria-hidden="true"></i></button><button class="stop center"><i class="fa fa-stop"
+                                    aria-hidden="true"></i></button>
+                        </div>
+                        <div class="song_name">
+                            <h2 class="display-4 sm_title">Omer Aasal</h2>
+                            <div class="secTxt">Joseph Attieh</div>
+                        </div>
+                        <div class="d-none d-md-block">Omer Aasal</div>
+                        <div>03:41</div>
+                        <div class="d-none d-md-block">334,618</div>
+                    </div> -->
+
+                </div>
+                <!-- Most Popular -->
+                <div class="mt-5">
+                    <h2 class="display-4">Most Popular</h2>
+                    <div class="line"></div>
+                    <div class="topSingers row justify-content-between p-4 text-center">
+                        <div class="mt-3">
+                            <img src="https://e-cdns-images.dzcdn.net/images/artist/9e07daec68870eb437d89be7c233cd1c/1000x1000-000000-80-0-0.jpg"
+                                alt="" width="150" class="rounded-pill">
+                            <div class="mt-3">
+                                <div class="sm_title">Omer Adam</div>
+                                <div class="secTxt">Rank: 256,556</div>
+                            </div>
+                        </div>
+                        <div class="mt-3">
+                            <img src="https://e-cdns-images.dzcdn.net/images/artist/9e07daec68870eb437d89be7c233cd1c/1000x1000-000000-80-0-0.jpg"
+                                alt="" width="150" class="rounded-pill">
+                            <div class="mt-3">
+                                <div class="sm_title">Omer Adam</div>
+                                <div class="secTxt">Rank: 256,556</div>
+                            </div>
+                        </div>
+                        <div class="mt-3">
+                            <img src="https://e-cdns-images.dzcdn.net/images/artist/9e07daec68870eb437d89be7c233cd1c/1000x1000-000000-80-0-0.jpg"
+                                alt="" width="150" class="rounded-pill">
+                            <div class="mt-3">
+                                <div class="sm_title">Omer Adam</div>
+                                <div class="secTxt">Rank: 256,556</div>
+                            </div>
+                        </div>
+                        <div class="mt-3">
+                            <img src="https://e-cdns-images.dzcdn.net/images/artist/9e07daec68870eb437d89be7c233cd1c/1000x1000-000000-80-0-0.jpg"
+                                alt="" width="150" class="rounded-pill">
+                            <div class="mt-3">
+                                <div class="sm_title">Omer Adam</div>
+                                <div class="secTxt">Rank: 256,556</div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </main>
+            <aside>
+                <h3 class="display-4 md_title">Category</h3>
+                <div class="hr"></div>
+
+                <ul>
+                    <li><a href="">Dancing</a></li>
+                    <li><a href="">Mizrahi</a></li>
+                    <li><a href="">Blues</a></li>
+                    <li><a href="">R&B</a></li>
+                    <li><a href="">All Categories</a></li>
+                </ul>
+            </aside>
+        </div>
+    </div>
+    <footer class="container-fluid">
+        <div class="black_overlay"></div>
+        <div class="container center align-items-end">
+            <div class="copyright">Moshe Machluf © 2020</div>
+        </div>
+    </footer>
+</body>
+
+</html>
