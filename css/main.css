@@ -59,8 +59,8 @@ body {
   display: block;
   width: 100%;
   height: 2px;
-  background: -webkit-gradient(linear, left top, right top, from(#EA384D), to(#D31027));
-  background: linear-gradient(to right, #EA384D, #D31027);
+  background: -webkit-gradient(linear, left top, right top, from(#ea384d), to(#d31027));
+  background: linear-gradient(to right, #ea384d, #d31027);
   margin-top: 22px;
 }
 
@@ -91,8 +91,8 @@ body {
 }
 
 .btn_c {
-  background: -webkit-gradient(linear, left top, right top, from(#EA384D), to(#D31027));
-  background: linear-gradient(to right, #EA384D, #D31027);
+  background: -webkit-gradient(linear, left top, right top, from(#ea384d), to(#d31027));
+  background: linear-gradient(to right, #ea384d, #d31027);
   border-radius: 50px;
   color: #fff;
   border: 0;
@@ -138,7 +138,7 @@ header.main-nav .logo div {
 }
 
 header.main-nav .logo div span {
-  color: #D31027;
+  color: #d31027;
 }
 
 li a {
@@ -152,7 +152,7 @@ li a {
 
 li a:hover {
   color: var(--txt);
-  background-color: #EA384D;
+  background-color: #ea384d;
 }
 
 .strip {
@@ -339,7 +339,7 @@ li a:hover {
 .bg_dark_box .dark_box {
   border-radius: 22px;
   background-color: var(--bgPanel);
-  border: 1px solid #D31027;
+  border: 1px solid #d31027;
   -webkit-box-shadow: 0px 0px 50px 3px rgba(0, 0, 0, 0.5);
           box-shadow: 0px 0px 50px 3px rgba(0, 0, 0, 0.5);
   min-width: 800px;
@@ -451,7 +451,7 @@ li a:hover {
 }
 
 .duration::before {
-  content: '';
+  content: "";
   position: absolute;
   width: var(--curr_time_width);
   height: 3px;
@@ -461,8 +461,8 @@ li a:hover {
 }
 
 i {
-  background: -webkit-gradient(linear, left top, right top, from(#EA384D), to(#D31027));
-  background: linear-gradient(to right, #EA384D, #D31027);
+  background: -webkit-gradient(linear, left top, right top, from(#ea384d), to(#d31027));
+  background: linear-gradient(to right, #ea384d, #d31027);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -479,6 +479,10 @@ i {
           box-shadow: 2px 2px 8px 1px rgba(0, 0, 0, 0.3);
   margin: 0 8px;
   font-size: 1.2em;
+}
+
+.play svg {
+  fill: red;
 }
 
 .stop {
@@ -537,8 +541,8 @@ aside ul li {
   right: 0;
   bottom: 0;
   background-color: #ccc;
-  -webkit-transition: .4s;
-  transition: .4s;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
 }
 
 .slider:before {
@@ -549,17 +553,17 @@ aside ul li {
   left: 3px;
   bottom: 3px;
   background-color: white;
-  -webkit-transition: .4s;
-  transition: .4s;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
 }
 
 input:checked + .slider {
-  background-color: #D31027;
+  background-color: #d31027;
 }
 
 input:focus + .slider {
-  -webkit-box-shadow: 0 0 1px #D31027;
-          box-shadow: 0 0 1px #D31027;
+  -webkit-box-shadow: 0 0 1px #d31027;
+          box-shadow: 0 0 1px #d31027;
 }
 
 input:checked + .slider:before {
