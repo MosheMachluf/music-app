@@ -6,10 +6,10 @@ export const doRestApi = async (queryS = "omer") => {
   return data.data;
 };
 
-// export const playlist = async (_id_album) => {
-//     let myUrl = `https://api.deezer.com/album/${_id_album}/tracks`;
-//     let resp = await fetch(myUrl);
-//     let data = await resp.json();
+export const playlist = async (_id_album) => {
+  let myUrl = `https://api.deezer.com/album/${_id_album}/tracks`;
+  let resp = await fetch(myUrl);
+  let data = await resp.json();
 
-//     return data.data;
-// }
+  return data.data;
+};

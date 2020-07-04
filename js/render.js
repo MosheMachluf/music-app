@@ -64,9 +64,8 @@ export const orderSort = () => {
   }
 };
 
-export const doLoading = (
-  _parent,
-  _img = "https://bbmptax.karnataka.gov.in/images/loader.gif"
-) => {
-  _parent.innerHTML = `<img src="${_img}" class="mr-3" height="25" alt="loading">`;
+export const doLoading = (_parent) => {
+  _parent.innerHTML = `<div class="spinner-border text-danger m-3" style="width:25px; height:25px;" role="status">
+                          <span class="sr-only">Loading...</span>
+                        </div>`;
 };

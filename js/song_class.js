@@ -1,6 +1,4 @@
-// import {
-//     playlist
-// } from './api_music_service.js';
+// import { playlist } from "./api_service.js";
 
 class Song {
   constructor(
@@ -33,13 +31,13 @@ class Song {
     let barTitle = document.querySelector("#bar_title");
 
     barTitle.innerHTML = `<h3 class="display-4 sm_title text-left">Result:</h3>
-            <div class="grid_songs">
-                <div>Artist</div>
-                <div>Song</div>
-                <div class="d-none d-md-block">Album</div>
-                <div>Duration</div>
-                <div class="d-none d-md-block">Rating</div>
-            </div>`;
+                          <div class="grid_songs">
+                              <div>Artist</div>
+                              <div>Song</div>
+                              <div class="d-none d-md-block">Album</div>
+                              <div>Duration</div>
+                              <div class="d-none d-md-block">Rating</div>
+                          </div>`;
   }
 
   renderSong() {
@@ -53,14 +51,13 @@ class Song {
     divArtist.className = "d-flex center";
     newDiv.appendChild(divArtist);
     divArtist.innerHTML += `<figure class="my-0 mr-3">
-                    <img src="${this.img}" class="rounded-circle" width="50" alt="${this.artist}">
-                </figure>`;
+                                <img src="${this.img}" class="rounded-circle" width="50" alt="${this.artist}">
+                            </figure>`;
 
     let playPause = document.createElement("button");
     playPause.className = "play center";
     divArtist.appendChild(playPause);
     playPause.innerHTML = `<i class="fa fa-play" aria-hidden="true"></i>`;
-    // playPause.innerHTML = `<img src="images/icons/play-24px.svg" alt="play-song">`;
 
     let stopSong = document.createElement("button");
     stopSong.className = "stop center";
@@ -144,20 +141,25 @@ class Song {
     divRating.innerHTML = this.rating;
   }
 
-  openBox() {
-    let bg_dark = document.querySelector(".bg_dark_box");
-    let dark_box = document.querySelector(".dark_box");
-    bg_dark.classList.remove("d-none");
-    dark_box.innerHTML = `<h1 class='display-4'>Coming Soon...</h1>`;
+  bg_dark = document.querySelector(".bg_dark_box");
+  dark_box = document.querySelector(".dark_box");
 
-    // let playlist_ar = playlist(this.idAlbum);
-    // console.log("my url:" + myUrl + "playlist_array:" + playlist_ar);
+  openBox = async () => {
+    this.bg_dark.classList.remove("d-none");
+    this.dark_box.innerHTML = `<h1 class='display-4'>Coming Soon...</h1>`;
 
-    //close box
-    bg_dark.addEventListener("click", () => {
-      bg_dark.classList.add("d-none");
-    });
-  }
+    // let res = playlist(this.idAlbum);
+    // let data = res.json();
+    // console.log(data);
+
+    window.onclick = (e) => {
+      if (e.target == this.bg_dark) this.closeBox();
+    };
+  };
+
+  closeBox = () => {
+    this.bg_dark.classList.add("d-none");
+  };
 
   showTime(_secs) {
     let mins = Math.floor(_secs / 60);
