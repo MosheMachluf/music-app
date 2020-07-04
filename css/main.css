@@ -1,3 +1,5 @@
+@import url("../css/bootstrap.min.css");
+@import url("http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css");
 html[data-theme="light"] {
   --txt: #000;
   --bgPanel: rgb(243, 243, 243);
@@ -11,8 +13,8 @@ html[data-theme="dark"] {
 }
 
 :root {
-  --duration_width: 0%;
-  --curr_time_width: 0%;
+  --duration_width: 0px;
+  --curr_time_width: 0px;
   --duration_display: none;
 }
 

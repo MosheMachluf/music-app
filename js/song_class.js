@@ -59,8 +59,8 @@ class Song {
     let playPause = document.createElement("button");
     playPause.className = "play center";
     divArtist.appendChild(playPause);
-    playPause.innerHTML = `<img src="images/icons/play-24px.svg" alt="play-song">`;
-    // playPause.innerHTML = `<i class="fa fa-play" aria-hidden="true"></i>`;
+    playPause.innerHTML = `<i class="fa fa-play" aria-hidden="true"></i>`;
+    // playPause.innerHTML = `<img src="images/icons/play-24px.svg" alt="play-song">`;
 
     let stopSong = document.createElement("button");
     stopSong.className = "stop center";
@@ -69,12 +69,13 @@ class Song {
 
     let song = new Audio();
     song.src = this.mp3;
-
+    let songTimeInterval;
+    let durationBar = document.querySelector(".duration");
     playPause.addEventListener("click", function () {
-      let durationBar = document.querySelector(".duration");
       durationBar.classList.remove("d-none");
+      if (songTimeInterval) clearInterval(songTimeInterval);
 
-      var songTime = setInterval(() => {
+      songTimeInterval = setInterval(() => {
         let duration = song.duration;
         let winWidth = window.innerWidth / duration;
         let widthCurrTime = song.currentTime * winWidth;
@@ -87,7 +88,6 @@ class Song {
           "--curr_time_width",
           widthCurrTime + "px"
         );
-        console.log(song.currentTime);
       }, 1000);
 
       if (song.paused) {
@@ -97,28 +97,28 @@ class Song {
       } else {
         song.pause();
         this.innerHTML = `<i class="fa fa-play" aria-hidden="true"></i>`;
-        clearInterval(songTime);
+        clearInterval(songTimeInterval);
       }
+    });
 
-      song.addEventListener("ended", function () {
-        playPause.innerHTML = `<i class="fa fa-repeat" aria-hidden="true"></i>`;
-        newDiv.classList.remove("active");
-        durationBar.classList.add("d-none");
-        clearInterval(songTime);
-        document.documentElement.style.setProperty("--duration_width", "100%");
-        document.documentElement.style.setProperty("--curr_time_width", "0em");
-      });
+    song.addEventListener("ended", function () {
+      playPause.innerHTML = `<i class="fa fa-repeat" aria-hidden="true"></i>`;
+      newDiv.classList.remove("active");
+      durationBar.classList.add("d-none");
+      clearInterval(songTimeInterval);
+      document.documentElement.style.setProperty("--duration_width", "100%");
+      document.documentElement.style.setProperty("--curr_time_width", "0em");
+    });
 
-      stopSong.addEventListener("click", function () {
-        song.currentTime = 0;
-        song.pause();
-        playPause.innerHTML = `<i class="fa fa-play" aria-hidden="true"></i>`;
-        newDiv.classList.remove("active");
-        durationBar.classList.add("d-none");
-        clearInterval(songTime);
-        document.documentElement.style.setProperty("--duration_width", "100%");
-        document.documentElement.style.setProperty("--curr_time_width", "0em");
-      });
+    stopSong.addEventListener("click", function () {
+      song.currentTime = 0;
+      song.pause();
+      playPause.innerHTML = `<i class="fa fa-play" aria-hidden="true"></i>`;
+      newDiv.classList.remove("active");
+      durationBar.classList.add("d-none");
+      clearInterval(songTimeInterval);
+      document.documentElement.style.setProperty("--duration_width", "100%");
+      document.documentElement.style.setProperty("--curr_time_width", "0em");
     });
 
     let divName = document.createElement("div");

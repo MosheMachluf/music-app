@@ -1,8 +1,8 @@
 import { switchTheme, navScroll, navMobile } from "./theme.js";
-import { declareViewEvents } from "./view_controller.js";
+import { declareEvents } from "./events_controller.js";
 
 window.onload = () => {
-  declareViewEvents();
+  declareEvents();
   switchTheme();
   navMobile();
   navScroll();
