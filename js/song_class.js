@@ -57,7 +57,8 @@ class Song {
     let playPause = document.createElement("button");
     playPause.className = "play center";
     divArtist.appendChild(playPause);
-    playPause.innerHTML = `<i class="fa fa-play" aria-hidden="true"></i>`;
+    playPause.innerHTML = `<ion-icon name="play"></ion-icon>`;
+    // playPause.innerHTML = `<i class="fa fa-play" aria-hidden="true"></i>`;
 
     let stopSong = document.createElement("button");
     stopSong.className = "stop center";
