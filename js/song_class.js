@@ -63,7 +63,8 @@ class Song {
     let stopSong = document.createElement("button");
     stopSong.className = "stop center";
     divArtist.appendChild(stopSong);
-    stopSong.innerHTML = `<i class="fa fa-stop" aria-hidden="true"></i>`;
+    stopSong.innerHTML = `<ion-icon name="stop"></ion-icon>`;
+    // stopSong.innerHTML = `<i class="fa fa-stop" aria-hidden="true"></i>`;
 
     let song = new Audio();
     song.src = this.mp3;
