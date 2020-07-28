@@ -231,6 +231,7 @@ li a {
   display: flex;
   justify-content: space-between;
   margin: 30px 0;
+  flex-wrap: nowrap;
 
   .search {
     width: 100%;
@@ -403,12 +404,6 @@ li a {
   // /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
-i {
-  background: $bgPrimary;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
 .play {
   min-width: 45px;
   min-height: 45px;
@@ -418,14 +413,9 @@ i {
   border: 0;
   border-radius: 100%;
   box-shadow: 2px 2px 8px 1px rgba(0, 0, 0, 0.3);
-  // justify-content: center;
-  // align-items: center;
+
   margin: 0 8px;
   font-size: 1.2em;
-
-  svg {
-    fill: red;
-  }
 }
 
 .stop {

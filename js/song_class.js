@@ -57,14 +57,12 @@ class Song {
     let playPause = document.createElement("button");
     playPause.className = "play center";
     divArtist.appendChild(playPause);
-    playPause.innerHTML = `<ion-icon name="play"></ion-icon>`;
-    // playPause.innerHTML = `<i class="fa fa-play" aria-hidden="true"></i>`;
+    playPause.innerHTML = `<ion-icon name="play" class="text-danger"></ion-icon>`;
 
     let stopSong = document.createElement("button");
     stopSong.className = "stop center";
     divArtist.appendChild(stopSong);
-    stopSong.innerHTML = `<ion-icon name="stop"></ion-icon>`;
-    // stopSong.innerHTML = `<i class="fa fa-stop" aria-hidden="true"></i>`;
+    stopSong.innerHTML = `<ion-icon name="stop" class="text-danger"></ion-icon>`;
 
     let song = new Audio();
     song.src = this.mp3;
@@ -92,16 +90,16 @@ class Song {
       if (song.paused) {
         song.play();
         newDiv.classList.add("active");
-        this.innerHTML = `<i class="fa fa-pause" aria-hidden="true"></i>`;
+        this.innerHTML = `<ion-icon name="pause" class="text-danger"></ion-icon>`;
       } else {
         song.pause();
-        this.innerHTML = `<i class="fa fa-play" aria-hidden="true"></i>`;
+        this.innerHTML = `<ion-icon name="play" class="text-danger"></ion-icon>`;
         clearInterval(songTimeInterval);
       }
     });
 
     song.addEventListener("ended", function () {
-      playPause.innerHTML = `<i class="fa fa-repeat" aria-hidden="true"></i>`;
+      playPause.innerHTML = `<ion-icon name="repeat" class="text-danger"></ion-icon>`;
       newDiv.classList.remove("active");
       durationBar.classList.add("d-none");
       clearInterval(songTimeInterval);
@@ -112,7 +110,7 @@ class Song {
     stopSong.addEventListener("click", function () {
       song.currentTime = 0;
       song.pause();
-      playPause.innerHTML = `<i class="fa fa-play" aria-hidden="true"></i>`;
+      playPause.innerHTML = `<ion-icon name="play" class="text-danger"></ion-icon>`;
       newDiv.classList.remove("active");
       durationBar.classList.add("d-none");
       clearInterval(songTimeInterval);
@@ -131,7 +129,6 @@ class Song {
     newDiv.appendChild(divAlbum);
     divAlbum.innerHTML = this.album;
     divAlbum.style.cursor = "pointer";
-    divAlbum.addEventListener("click", this.openBox);
 
     let divDuration = document.createElement("div");
     newDiv.appendChild(divDuration);
@@ -142,26 +139,6 @@ class Song {
     newDiv.appendChild(divRating);
     divRating.innerHTML = this.rating;
   }
-
-  bg_dark = document.querySelector(".bg_dark_box");
-  dark_box = document.querySelector(".dark_box");
-
-  openBox = async () => {
-    this.bg_dark.classList.remove("d-none");
-    this.dark_box.innerHTML = `<h1 class='display-4'>Coming Soon...</h1>`;
-
-    // let res = playlist(this.idAlbum);
-    // let data = res.json();
-    // console.log(data);
-
-    window.onclick = (e) => {
-      if (e.target == this.bg_dark) this.closeBox();
-    };
-  };
-
-  closeBox = () => {
-    this.bg_dark.classList.add("d-none");
-  };
 
   showTime(_secs) {
     let mins = Math.floor(_secs / 60);
