@@ -217,9 +217,9 @@ li a {
 }
 
 .grid_main {
-  display: grid;
-  grid-template-columns: 4fr 1fr;
-  grid-gap: 2em;
+  // display: grid;
+  // grid-template-columns: 4fr 1fr;
+  // grid-gap: 2em;
   // position: relative;
 
   @media (max-width: 992px) {
