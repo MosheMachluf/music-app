@@ -236,6 +236,15 @@ li a:hover {
           animation-fill-mode: both;
 }
 
+.grid_main {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 4fr 1fr;
+      grid-template-columns: 4fr 1fr;
+  grid-gap: 2em;
+  position: relative;
+}
+
 @media (max-width: 992px) {
   .grid_main {
     -ms-grid-columns: 1fr;
